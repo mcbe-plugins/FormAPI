@@ -8,7 +8,17 @@ use pocketmine\plugin\PluginBase;
 
 class FormAPI extends PluginBase{
 
-    /**
+	public static $formAPI;
+
+	public function onLoad() {
+		$this::$formAPI = $this;
+	}
+
+	public static function getInstance() : FormAPI {
+		return self::$formAPI;
+	}
+
+	/**
      * @deprecated
      *
      * @param callable|null $function
